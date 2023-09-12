@@ -70,7 +70,11 @@
         <input id="navBtn" type="checkbox"/>
         <div class="nav-menu">
           
-            <a class="nav-menu-item" href='/blog/'>博客</a>
+            
+              <a class="nav-menu-item" href="/page1">子页一</a>
+            
+              <a class="nav-menu-item" href="/page2">子页二</a>
+            
           
           
         </div>
@@ -79,7 +83,7 @@
     </div>
     <div class="body">
       
-  <div class="wall wall-category--plain">
+  <div class="wall wall-category">
     <div class="wall-main">
       <div class="wall-category-title">
         <div class="title-icon"
@@ -88,7 +92,7 @@
       </div>
       <div class="wall-category-description"></div>
       <div class="wall-category-tags">
-        <div id="tags-outer"></div>
+        <div id="tags-outer"><canvas width="500" height="500" id="tagCanvas"><canvas></div>
       </div>
     </div>
   </div>
@@ -179,12 +183,12 @@
                 
                   <div class="text">
                     <img alt="link" height="20px" width="20px" src="/images/logo-github.svg"/>
-                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/">github</a>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/Lixiaojun-lab">github</a>
                   </div>
                 
                   <div class="text">
                     <img alt="link" height="20px" width="20px" src="/images/logo-wx.svg"/>
-                    <a class="foot-link" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI3NzQ4NDkzNg==&mid=2247484469&idx=1&sn=8a442bb67397f52cce5c38c3f9b41e36&chksm=eb64c0d2dc1349c40d2e1bb55615ae28b3f2951be22f00717b9ade98c851082e42dc666ab45d#rd">微信公众号</a>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/lMA4qG8RX1TKvxvSoRG-Rg">微信公众号</a>
                   </div>
                 
                   <div class="text">
@@ -218,6 +222,35 @@
     </div>
     
     
+  
+    <script type="text/javascript"
+            charset="utf-8"
+            src="/js/tagcanvas.min.js"></script>
+    <script type = "text/javascript">
+        window.onload = function() {
+            try {
+                TagCanvas.Start('tagCanvas', '', {
+                    outlineThickness: 1,
+                    maxSpeed: 0.03,
+                    // freezeActive: true,
+                    // freezeDecel: true,
+                    textColour: null,
+                    textColour: null,
+                    outlineColour: "#aaa",
+                    weight: true,
+                    padding: 4,
+                    // clickToFront: 200,
+                    fadIn: 200,
+                    // pinchZoom: true,
+                    wheelZoom: false,
+                    initial: [0.1, -0.03]
+                });
+            } catch (e) {
+                // something went wrong, hide the canvas container
+                document.getElementById('tags-outer').style.display = 'none';
+            }
+        };
+    </script>
   
 
   </body>
